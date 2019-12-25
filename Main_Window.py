@@ -31,6 +31,16 @@ class Ui_MainWindow(object):
         self.nxtBtn.setEnabled(False)
         self.nxtBtn.setGeometry(QtCore.QRect(220, 20, 75, 23))
         self.nxtBtn.setObjectName("nxtBtn")
+        self.playingTimeline = QtWidgets.QSlider(self.centralwidget)
+        self.playingTimeline.setGeometry(QtCore.QRect(70, 120, 221, 22))
+        self.playingTimeline.setOrientation(QtCore.Qt.Horizontal)
+        self.playingTimeline.setObjectName("playingTimeline")
+        self.curPos = QtWidgets.QLabel(self.centralwidget)
+        self.curPos.setGeometry(QtCore.QRect(10, 120, 51, 21))
+        self.curPos.setObjectName("curPos")
+        self.endPos = QtWidgets.QLabel(self.centralwidget)
+        self.endPos.setGeometry(QtCore.QRect(300, 120, 51, 21))
+        self.endPos.setObjectName("endPos")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 360, 21))
@@ -51,10 +61,12 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "GovnoCode mp3-player"))
         self.playPauseBtn.setText(_translate("MainWindow", "Play"))
         self.prevBtn.setText(_translate("MainWindow", "Previous"))
         self.nxtBtn.setText(_translate("MainWindow", "Next"))
+        self.curPos.setText(_translate("MainWindow", "0.0.0"))
+        self.endPos.setText(_translate("MainWindow", "0.0.0"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.actionSelect_folder.setText(_translate("MainWindow", "Select folder"))
 

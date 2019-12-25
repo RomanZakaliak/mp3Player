@@ -5,7 +5,12 @@ class player(object):
     pygame.init()
     pyGMix = pygame.mixer
     pyGMix.init()
-
-    def getFile(self, filename:str):
+    endEvent = pygame.USEREVENT+1
+    pygame = pygame
+    def setFile(self, filename:str):
         self.pyGMix.music.load(filename)
+
+    def __del__(self):
+        self.pyGMix.quit()
+
 
